@@ -1,0 +1,58 @@
+﻿<Page
+    x:Class="App1.Pages.ListSongPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:App1.Pages"
+    xmlns:entity ="using:App1.Entity"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <StackPanel>
+        <StackPanel.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="White" Offset="0"/>
+                <GradientStop Color="#FF2E75BE" Offset="1"/>
+            </LinearGradientBrush>
+        </StackPanel.Background>
+        <StackPanel Width="1014">
+            <ScrollViewer Height="602" MaxWidth="1000" VerticalScrollBarVisibility="Hidden" Width="990">
+                <StackPanel>
+                    <ListView x:Name="MyListView" Tapped="MyListView_Tapped" Foreground="Black">
+                        <ListView.ItemTemplate>
+                            <DataTemplate x:DataType="entity:Song">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Ellipse x:Name="Ellipse" Grid.RowSpan="2" Width ="70" Height="70" Margin="6" 
+                                         VerticalAlignment="Center"
+                                         HorizontalAlignment="Center">
+                                        <Ellipse.Fill>
+                                            <ImageBrush ImageSource="{x:Bind thumbnail}"/>
+                                        </Ellipse.Fill>
+                                    </Ellipse>
+                                    <TextBlock Grid.Column="1" Text="{x:Bind name}" x:Phase="1" 
+                                           Style="{ThemeResource BaseTextBlockStyle}" 
+                                   Margin="12,6,0,0" Foreground="Black"/>
+                                    <TextBlock  Grid.Column="1" Grid.Row="1" Text="{x:Bind singer}" x:Phase="2" 
+                                            Style="{ThemeResource BaseTextBlockStyle}" 
+                                    Margin="12,0,0,6" Foreground="Black"/>
+                                </Grid>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackPanel>
+            </ScrollViewer>
+        </StackPanel>
+        <StackPanel>
+            <MediaPlayerElement x:Name="MyMediaPlayer" AutoPlay="True" AreTransportControlsEnabled="True" Width="1011"/>
+        </StackPanel>
+    </StackPanel>
+</Page>

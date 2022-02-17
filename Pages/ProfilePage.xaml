@@ -1,0 +1,49 @@
+﻿<Page
+    x:Class="App1.Pages.ProfilePage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:App1.Pages"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <RelativePanel>
+        <!--<RelativePanel.Background>
+            <ImageBrush ImageSource="https://ak.picdn.net/shutterstock/videos/1069087117/thumb/1.jpg?ip=x480"></ImageBrush>
+        </RelativePanel.Background>-->
+        <ScrollViewer Height="789" Width="1227" Foreground="Black">
+            <StackPanel Width="482" Height="618">
+                <StackPanel.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="White" Offset="0"/>
+                        <GradientStop Color="#FF2E75BE" Offset="1"/>
+                    </LinearGradientBrush>
+                </StackPanel.Background>
+                <Grid>
+                    <Ellipse x:Name="Ellipse" 
+                                         VerticalAlignment="Top"
+                                         HorizontalAlignment="Left" Height="129" RenderTransformOrigin="0.5,0.5" Width="181" Margin="159,55,0,0" UseLayoutRounding="False" d:LayoutRounding="Auto">
+                        <Ellipse.RenderTransform>
+                            <CompositeTransform ScaleX="-1" ScaleY="-1" Rotation="179.3"/>
+                        </Ellipse.RenderTransform>
+                        <Ellipse.Fill>
+                            <ImageBrush x:Name="avatar" ImageSource="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Pantheon_0.jpg"/>
+                        </Ellipse.Fill>
+                    </Ellipse>
+                    <TextBlock x:Name="fullName" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Height="32" Width="219" Margin="238,202,0,0" FocusVisualPrimaryBrush="#FFF10303"><Run Text="Name"/><LineBreak/><Run/></TextBlock>
+                    <TextBlock x:Name="email" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Height="32" Width="219" Text="Email" Margin="240,230,0,0"/>
+                    <TextBlock x:Name="address" HorizontalAlignment="Left"  TextWrapping="Wrap" VerticalAlignment="Top" Height="27" Width="221" Text="Address" Margin="238,261,0,0"/>
+                    <TextBlock x:Name="birthday" HorizontalAlignment="Left"  TextWrapping="Wrap" VerticalAlignment="Top" Height="21" Width="133" Text="Birthday" Margin="240,290,0,0"/>
+                    <TextBlock x:Name="fullName_Copy" HorizontalAlignment="Left"  TextWrapping="Wrap" VerticalAlignment="Top" Height="25" Width="42" Text="Name:" Margin="151,202,0,0" RenderTransformOrigin="1.781,3.683"/>
+                    <TextBlock x:Name="fullName_Copy1" HorizontalAlignment="Left"  TextWrapping="Wrap" VerticalAlignment="Top" Height="25" Width="42" Text="Email:" RenderTransformOrigin="2.592,4.029" Margin="153,230,0,0"/>
+                    <TextBlock x:Name="fullName_Copy2" HorizontalAlignment="Left"  TextWrapping="Wrap" VerticalAlignment="Top" Height="25" Width="64" Text="Address:" Margin="153,261,0,0"/>
+                    <TextBlock x:Name="fullName_Copy3" HorizontalAlignment="Left"  TextWrapping="Wrap" VerticalAlignment="Top" Height="25" Width="64" Text="Birthday:" Margin="153,289,0,0"/>
+                    <Button Content="Edit Profile" VerticalAlignment="Top" Width="98" IsEnabled="False" Margin="116,339,0,0"/>
+                    <Button Content="Logout" VerticalAlignment="Top" Width="98" Margin="258,337,0,0"/>
+                </Grid>
+            </StackPanel>
+        </ScrollViewer>
+    </RelativePanel>
+
+</Page>
